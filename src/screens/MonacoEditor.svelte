@@ -1,69 +1,76 @@
 <script lang="ts">
-import {onMount} from "svelte"
-import githubTheme from "./github.theme.json"
+	import { onMount } from 'svelte';
+	import githubTheme from './github.theme.json';
 
-export let value = ""
+	export let value = '';
 
-let element:HTMLDivElement = null
-let editor
+	let element: HTMLDivElement = null;
+	let editor;
 
-export const setValue = (value) => {
-  editor && editor.setValue(value)
-}
+	export const setValue = (value) => {
+		editor && editor.setValue(value);
+	};
 
+	onMount(() => {
+		require.config({ paths: { vs: 'https://unpkg.com/monaco-editor@latest/min/vs' } });
+		window.MonacoEnvironment = { getWorkerUrl: () => proxy };
 
-onMount(() => {
-
-  require.config({paths: {"vs": "https://unpkg.com/monaco-editor@latest/min/vs"}})
-  window.MonacoEnvironment = {getWorkerUrl: () => proxy}
-
-  let proxy = URL.createObjectURL(new Blob([`
+		let proxy = URL.createObjectURL(
+			new Blob(
+				[
+					`
 	self.MonacoEnvironment = {
 		baseUrl: 'https://unpkg.com/monaco-editor@latest/min/'
 	};
 	importScripts('https://unpkg.com/monaco-editor@latest/min/vs/base/worker/workerMain.js');
-`], {type: "text/javascript"}))
+`
+				],
+				{ type: 'text/javascript' }
+			)
+		);
 
-  require(["vs/editor/editor.main"], function() {
-    monaco.editor.defineTheme("adorableCSS", githubTheme)
-    editor = monaco.editor.create(element, {
-      value,
-      language: "html",
-      automaticLayout: true,
-      scrollBeyondLastLine: false,
-      readOnly: false,
-      theme: "adorableCSS",
-      tabSize: 2,
-      fontSize: "12px",
-      overviewRulerLanes: 0,
-      wordWrap: "on",
-      minimap: {
-        enabled: false,
-      },
-    })
+		require(['vs/editor/editor.main'], function () {
+			monaco.editor.defineTheme('waveCSS', githubTheme);
+			editor = monaco.editor.create(element, {
+				value,
+				language: 'html',
+				automaticLayout: true,
+				scrollBeyondLastLine: false,
+				readOnly: false,
+				theme: 'waveCSS',
+				tabSize: 2,
+				fontSize: '12px',
+				overviewRulerLanes: 0,
+				wordWrap: 'on',
+				minimap: {
+					enabled: false
+				}
+			});
 
-    editor.onDidChangeModelContent(event => {
-      value = editor.getValue()
-    })
+			editor.onDidChangeModelContent((event) => {
+				value = editor.getValue();
+			});
 
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, function() {
-      editor.getAction("editor.action.formatDocument").run()
-      return
-    })
+			editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, function () {
+				editor.getAction('editor.action.formatDocument').run();
+				return;
+			});
 
-    window.addEventListener("resize", () => {
-      editor.layout()
-    })
-  })
+			window.addEventListener('resize', () => {
+				editor.layout();
+			});
+		});
 
-  return () => {
-    editor && editor.dispose()
-  }
-})
+		return () => {
+			editor && editor.dispose();
+		};
+	});
 </script>
 
-<div bind:this={element} class="h(100%)"/>
+<div bind:this={element} class="h(100%)" />
 
 <style>
-:global(.monaco-editor) { position: absolute !important; }
+	:global(.monaco-editor) {
+		position: absolute !important;
+	}
 </style>

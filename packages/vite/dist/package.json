@@ -1,13 +1,13 @@
 {
 	"name": "wavecss",
-	"version": "1.6.2",
+	"version": "1.6.3",
 	"description": "Rapid On-Demand Atomic CSS generator",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/vyntrix/wavecss.git"
 	},
 	"bin": {
-		"adorable-css": "bin/wavecss.js"
+		"wavecss": "bin/wavecss.js"
 	},
 	"homepage": "https://wavecss.vyntrix.me/",
 	"keywords": [
@@ -16,8 +16,6 @@
 		"atomic css",
 		"utility first",
 		"ondemand",
-		"figma",
-		"handoff",
 		"vite"
 	],
 	"author": "vyntrix",

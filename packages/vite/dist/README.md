@@ -1,7 +1,7 @@
 # WaveCSS
 
 > Rapid On-Demand Atomic CSS framework
-> A Fork of (AdorableCSS)[https://github.com/developer-1px/adorable-css] with a focus on performance and simplicity.
+> A Fork of [AdorableCSS](https://github.com/developer-1px/adorable-css) with a focus on performance and simplicity.
 
 #### Don't write your own css. Just write down in HTML.
 

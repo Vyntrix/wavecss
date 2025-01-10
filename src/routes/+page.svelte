@@ -60,7 +60,7 @@
 			</h1>
 
 			<code class="pre text-left bg(#f1f1f1) p(20) r(8) monospace">
-				{`/* @adorable.css */
+				{`/* @wave.css */
 
 * {margin:0;padding:0;box-sizing:border-box;font:inherit;color:inherit;flex-shrink:0;}
 .c\(\#fff\){color:#fff;}
@@ -132,7 +132,7 @@ html .active\:b\(\#000\.2\):active,html .active\:b\(\#000\.2\).\:active{border:1
 				{`<a class="hover:underline active:bg(#000)"/>
 <div class="nth-child(3n+1):bg(orange)"/>
 <input class="placeholder:c(#ccc)"/>
-<div class="after:content(--my-content)" style="--my-content: 'hello adorable'"/>
+<div class="after:content(--my-content)" style="--my-content: 'hello wave'"/>
 
 .placeholder\\:c\\(\\#ccc\\)::placeholder{color:#ccc;}
 html .active\\:bg\\(\\#000\\):active,html .active\\:bg\\(\\#000\\).\\:active{background-color:#000;}
