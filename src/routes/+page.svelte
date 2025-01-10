@@ -1,5 +1,5 @@
 <script lang="ts">
-	const slide = 'text-center vbox pack p(200/32) odd:bg(#fafafa) clip';
+	const slide = 'text-center vbox pack p(200/32) even:bg(#fafafa) clip';
 	const h1 = 'font(3em/-/-1.5%) bold ~md:font(1.6em)';
 	const h2 = 'font(1.2em/-/-1.5%) opacity(75%) ~md:font(1.4em)';
 </script>
@@ -16,13 +16,14 @@
 </div>
 
 <div class={slide}>
-	<h1 class={h1}>No more writing your own CSS.</h1>
-	<h2 class={h2}>
-		We have created almost all the CSS you need. Just write down in your HTML(or JSX).
-	</h2>
+	<h1 class={h1}>No more writing your own CSS</h1>
+	<h2 class={h2}>We have created almost all the CSS you need. Just write down in your HTML.</h2>
 	<div class="space(2em)" />
 	<img
-		src="https://images.velog.io/images/teo/post/dde8bc56-15d0-4fc0-a15a-f3c204f50494/AdorableCSS.gif"
+		alt="user-attachments"
+		loading="lazy"
+		class="r(12)"
+		src="https://github.com/user-attachments/assets/d271f135-f9b8-41f1-92a2-07e640d52784"
 	/>
 </div>
 
