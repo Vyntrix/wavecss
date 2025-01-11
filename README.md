@@ -1,6 +1,7 @@
 # 🌊 WaveCSS
 
 > Rapid On-Demand Atomic CSS framework
+
 > A Fork of [AdorableCSS](https://github.com/developer-1px/adorable-css) with a focus on performance and simplicity.
 
 #### Don't write your own css. Just write down in HTML.
@@ -153,7 +154,7 @@ For more info, run any command with the `--help` flag:
   $ wavecss --help
 
 Options:
-  -o, --out <dir>  [string] output Directory (default: adorable.css)
+  -o, --out <dir>  [string] output Directory (default: wave.css)
   -w, --watch      [boolean] rebuilds when modules have changed on disk (default: false)
   -m, --minify     [boolean] minify output css (default: false)
   -v, --verbose    [boolean] verbose build output (default: false)
