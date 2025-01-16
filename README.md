@@ -1,3 +1,7 @@
+I know what you think...
+"yet another css library"
+and yes you are right
+
 # 🌊 WaveCSS
 
 > Rapid On-Demand Atomic CSS framework
